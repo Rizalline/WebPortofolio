@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>neeiuiu</title> 
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+        :root {
+    --primaryTextColor: #232e35; /* Untuk title atau judul */
+    --secondaryTextColor: #656d72; /* Untuk text biasa seperti paragraph contohnya */
+  
+    --lineColor: #d9d9d9; /* untuk line di pre-title */
+  
+    --primaryBackgroundColor: #fff;
+
+    --primaryIconColor: #ffcc00;
+  
+    --sectionPadding: 6rem 0;
+  
+    --itemBorderRadius: 0.7rem;
+  }
+        /* Gaya umum */
+        html {
+            scroll-behavior: smooth; /* Efek scroll halus */
+        }
+        body {
+            cursor: url(), pointer;
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            position: fixed; /* Menjadikan header tetap di atas */
+            top: 0;
+            width: 100%; /* Lebar penuh */
+            z-index: 10; /* Supaya header berada di atas konten lain */
+        }
+        strong {
+    color: var(--primaryTextColor);
+  }  
+  p {
+    font-size: 1rem; /* 16 px */
+    line-height: 1.9rem; /*30.4 px */
+  }
+  p,
+span,
+label,
+input,
+textarea,
+li {
+  color: var(--secondaryTextColor);
+}
+
+  .pre-title {
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: var(--secondaryTextColor);
+    position: relative;
+    padding-left: 40px;
+    width: fit-content;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+  
+  .pre-title::before {
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: var(--lineColor);
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 50%;
+  }
+  
+  /* Hero Section */
+  #hero {
+    height: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   
+    align-items: center;
+  }
+  
+  .hero-name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .hero-name span {
+    color: var(--primaryIconColor) !important;
+  }
+  
+
+        .pro {
+        display: flex;
+        align-items: center;
+        gap: 20px; /* Jarak antara gambar dan teks */
+        flex-direction: row; /* Gambar di samping teks pada desktop */
+    }
+
+    .pro img {
+        max-width: 100%; /* Membuat gambar responsif */
+        height: auto;
+        object-fit: cover; /*  gambar tidak terdistorsi */
+    }
+
+    /* Mode Ponsel (Gambar di atas teks) */
+    @media (max-width: 768px) {
+        .pro {
+            flex-direction: column; /* Gambar berada di atas teks */
+            align-items: center; /* Pusatkan gambar dan teks */
+            text-align: center; /* Pusatkan teks */
+        }
+
+        .pro img {
+            width: 80%; /* Mengatur ukuran gambar lebih kecil */
+            margin-bottom: 20px; /* Memberikan jarak bawah pada gambar */
+        }
+
+        .pro .text-section {
+            width: 100%; /* Lebar teks mengikuti layar */
+        }
+
+        .pro img {
+            order: -1; /* Memindahkan gambar ke atas */
+        }
+    }
+        .content {
+            padding: 0px 20px; /* padding-top untuk memberi ruang di bawah header */
+        }
+        .header img {
+            height: 50px;
+        }
+        .navbar a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .text-section {
+            width: 50%;
+            padding: 20px;
+        }
+        .text-section h2 {
+            color: #ffcc00;
+            
+        }
+        section {
+            padding: 50px 20px;
+        }
+        footer {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            background-color: #ffffff;
+            border-top: 1px solid #ddd;
+            margin-top: auto;
+        }
+        
+.skill-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+        .education {
+  display: flex;
+  gap: 1rem;
+}
+
+.education .line {
+  padding: 0 0.7rem;
+}
+
+.education .line div {
+  width: 2px;
+  height: 100%;
+  background: var(--borderColor);
+  position: relative;
+}
+
+.education-info p {
+  margin: 0.6rem 0 1.4rem;
+}
+
+.education-years {
+  margin-bottom: 3rem;
+}
+
+
+.education .line div:before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: var(--borderColor);
+  border-radius: 50%;
+  position: absolute;
+  left: -6px;
+}
+
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.5rem;
+}
+
+.skills-right ul {
+  line-height: 2rem;
+  padding: 0 1rem;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="w" alt="">
+        <div class="navbar">
+         <a href="#hero">Home</a>
+            <a href="#profile">Profile</a>
+            <a href="#skill">Skill</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+            <a href=""></a>
+        </div>
+    </div>
+    <section id="hero">
+      <div class="hero-left">
+        <h3 class="pre-title">PORTOFOLIO</h3>
+        <h1 class="hero-name">RIZAL <span>EFENDI</span></h1>
+        <p>
+          Selamat datang di portofolio saya, tempat saya berbagi karya dan perjalanan saya dalam dunia teknologi dan desain. </p><br>
+      
+      </div>
+    </section>
+    <section id="up" class="content">
+        <div class="text-section">
+        <h2></h2>
+        <p></p>
+    </section>
+
+    <section id="profile" class="pro">
+        <div class="text-section">
+            <h2>RIZAL EFENDI</h2>
+            <p style="margin: 0; line-height: 2;">Saya seorang mahasiswa di bidang Informatika dan Desain Web, lahir pada 3 Agustus 2005, dan saat ini tinggal di Grobogan, Jawa tengah. Saya tertarik untuk mengembangkan keterampilan dalam pengembangan situs web dan desain antarmuka. Saya fokus pada penerapan pengetahuan teknis dan kreativitas untuk menciptakan solusi digital yang efisien dan efektif, serta terus belajar dan berinovasi untuk menghadapi tantangan dalam dunia teknologi.</p><br>
+ </div>
+                <img src="1736184337705.png" alt="Gambar" width="20%">
+        </section>
+<section>
+    <!-- Teks tidak terikat di bawah slider -->
+    <div style="width: 100%; margin-top: 30px; padding: 0 20px;">
+        <p style="margin: 0; line-height: 2;">
+          Sebagai seorang mahasiswa, saya berusaha untuk terus mengembangkan keterampilan saya dalam bidang desain dan teknologi untuk menciptakan solusi yang inovatif dan efektif.</p>
+    </div>
+</section>
+</section>
+
+<section id="skill"class="content">
+    <div class="text-section">
+    <h2>Skill and Education</h2>
+        </div></section>
+          <div class="skill-grid">
+            <div class="skill-left">
+              <div class="education">
+                <div class="line">
+                  <div></div>
+                </div>
+                
+                <div class="education-info">
+                  <h4 class="education-title">SMK Bani Muslim Pati</h4>
+                  <p>Jurusan Multimedia - Magang Di Doriku Digital Printing</p>
+                  <h4 class="education-years">2020 - 2023</h4>
+                </div>
+              </div>
+              <div class="education">
+                <div class="line">
+                  <div></div>
+                </div>
+                <div class="education-info">
+                  <h4 class="education-title">Universitas PGRI Semarang</h4>
+                  <p>Fakultas Teknik dan Informatika - Informatika</p>
+                  <h4 class="education-years">2023 - Sekarang</h4>
+                </div>
+              </div>
+            </div>
+  
+            <div class="skill-right" style="padding: 0 40px;">
+              <p style="margin: 0; line-height: 2;">
+                Saya terus belajar di bidang desain antarmuka dan bereksperimen dengan teknologi dan kerangka kerja baru, dan di sini Anda dapat melihat ringkasan keterampilan saya.
+              </p>
+              <div class="skill-list">
+                <ul>
+                  <li>HTML</li><br>
+                  <li>CSS</li><br>
+                  <li>JavaScript</li><br>
+                  <li>Corel Draw</li><br>
+                  <li>Photoshop</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section id="gallery"class="content">
+        <div class="text-section">
+        <h2>Gallery</h2>
+        <p style="margin: 0; line-height: 2;">Galeri ini berisi kumpulan karya dan proyek yang saya kerjakan di bidang informatika.</p>
+        </div></section>
+        <section>
+        <div style="padding: 0 20px;">
+            <img src="Tugas Photoshop Rizal Efendi 2670033.jpg" alt="Gallery 1" width="30%">
+            <p style="margin: 0; line-height: 2;">Tugas Desain Photoshop Fill Stroke dan Tipografi</p>
+            <br><img src="Poster  final project.jpeg" alt="Gallery 2" width="30%">
+            <p style="margin: 0; line-height: 2;">Tugas Desain Corel Draw Poster Ekspo Final Project</p>
+  
+          </div></section>
+
+    <section id="contact"class="content">
+        <div class="text-section">
+        <h2>Contact</h2>
+        <p>+62 888-0268-9233</p>
+        <p>emieayam11@gmail.com</p>
+    </section>
+
+    <!-- Section JOIN US -->
+    <section id="join">
+    </section>
+
+    <script>
+        // efek scroll halus
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+    </script>
+
+    <footer>
+        <p>&copy;Portofolio Rizal efendi</p>
+    </footer>
+</body>
+</html>
+
